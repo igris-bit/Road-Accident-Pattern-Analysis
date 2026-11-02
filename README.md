@@ -35,7 +35,7 @@ Real-time roadside sensor simulation with hazard alert detection:
 ├── pages/
 │   └── iot_monitor.py                  # IoT Streamlit page (Module 2)
 ├── indian_roads_dataset.csv            # Dataset: 20,000 rows × 24 columns
-├── oad_Accident_Pattern_Analysis.ipynb # EDA notebook (Google Colab)
+├── Road_Accident_Pattern_Analysis.ipynb # EDA notebook (Google Colab)
 ├── requirements.txt                    # Python dependencies
 └── packages.txt                        # System packages
 ```
