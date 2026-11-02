@@ -1,7 +1,7 @@
 """
 iot_simulator.py
 ----------------
-IoT Simulation Engine for Road Accident Pattern Analysis.
+IoT Simulation Engine For Road Accident Pattern Analysis.
 
 This module provides:
   - Simulated IoT sensor readings (no physical hardware required).
@@ -106,7 +106,7 @@ def simulate_accident_risk(accident_probability=None):
 
 def generate_sensor_reading(city: Optional[str] = None) -> dict:
     """
-    Simulate one IoT sensor reading from a roadside unit.
+    Simulate one IoT sensor reading from a roadside  unit.
 
     Returns a dict with the same field names used in the real CSV so that
     alert rules work identically on both real and simulated data.
