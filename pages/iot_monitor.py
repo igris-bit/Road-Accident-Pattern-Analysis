@@ -7,12 +7,15 @@ This file lives in the `pages/` folder so Streamlit automatically adds it
 to the sidebar navigation without touching app.py.
 
 Features:
-  1. Live Sensor Feed   — generate fresh IoT readings on demand or auto-refresh
-  2. Alert Panel        — colour-coded rule-based alerts
-  3. Risk Gauge         — visual bar + emoji indicator
-  4. Accident Hotspot Map — real dataset lat/lon via pydeck
-  5. Alert History Log  — session-state table + CSV download
-"""
+  1. Live Sensor Feed       — Real-time simulated IoT readings with auto-refresh
+  2. Smart Alert Panel      — Colour-coded alerts based on accident risk
+  3. Risk Gauge             — Visual risk percentage with status indicator
+  4. Accident Hotspot Map   — Interactive map of real accident locations
+  5. Alert History Log      — Session-based alert records with CSV download
+  6. Risk Prediction        — Multi-factor accident risk assessment
+  7. City Statistics        — Historical accident data by city
+  8. Emergency Warnings     — Automatic alerts for high-risk situations
+
 
 import time
 import datetime
