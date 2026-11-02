@@ -36,6 +36,70 @@ ROAD_TYPES         = ["highway", "city road", "rural road", "expressway"]
 RISK_HIGH   = 0.70
 RISK_MEDIUM = 0.45
 
+
+# Additional IoT Sensor Fields
+VEHICLE_SPEED_RANGE = (0, 140)  # Speed in km/h
+
+ROAD_CONDITIONS = [
+    "dry",
+    "wet",
+    "damaged",
+    "slippery"
+]
+
+ACCIDENT_SEVERITY = [
+    "low",
+    "medium",
+    "high"
+]
+
+SENSOR_STATUS = [
+    "online",
+    "offline",
+    "faulty"
+]
+
+# Risk and Alert Thresholds
+RISK_MEDIUM = 0.40
+RISK_HIGH = 0.70
+
+# Generate Simulated IoT Sensor Data
+def generate_sensor_reading():
+    return {
+        "vehicle_speed": random.randint(*VEHICLE_SPEED_RANGE),
+        "road_condition": random.choice(ROAD_CONDITIONS),
+        "accident_severity": random.choice(ACCIDENT_SEVERITY),
+        "sensor_status": random.choice(SENSOR_STATUS),
+        "weather": random.choice(WEATHER_CONDITIONS),
+        "visibility": random.choice(VISIBILITY_LEVELS),
+        "traffic_density": random.choice(TRAFFIC_DENSITY),
+        "timestamp": datetime.datetime.now().isoformat()
+    }
+
+# Evaluate Accident Risk and Generate Alert
+def evaluate_risk(accident_probability):
+    if accident_probability >= RISK_HIGH:
+        return "HIGH RISK - Emergency Alert"
+    elif accident_probability >= RISK_MEDIUM:
+        return "MEDIUM RISK - Warning"
+    else:
+        return "LOW RISK - Normal"
+
+# Generate a Complete Simulation Result
+def simulate_accident_risk(accident_probability=None):
+    if accident_probability is None:
+        accident_probability = random.random()
+
+    accident_probability = max(0.0, min(1.0, accident_probability))
+
+    reading = generate_sensor_reading()
+    reading["accident_probability"] = round(accident_probability, 2)
+    reading["emergency_alert"] = evaluate_risk(accident_probability)
+
+    return reading
+
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Sensor Reading Generator
 # ─────────────────────────────────────────────────────────────────────────────
@@ -52,6 +116,7 @@ def generate_sensor_reading(city: Optional[str] = None) -> dict:
     chosen_city    = city if city else random.choice(CITIES)
     hour           = now.hour                                   # real current hour
     is_weekend     = 1 if now.weekday() >= 5 else 0
+
     is_peak_hour   = 1 if hour in range(8, 10) or hour in range(17, 20) else 0
 
     weather        = random.choice(WEATHER_CONDITIONS)
