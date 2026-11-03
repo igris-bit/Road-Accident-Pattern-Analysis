@@ -212,3 +212,34 @@ with st.expander("🔍 View Raw / Filtered Dataset"):
         mime="text/csv"
     )
 
+# ----------------- STATE-WISE ACCIDENT ANALYSIS -----------------
+
+st.markdown("---")
+st.subheader("🏙️ Top 10 States by Road Accidents")
+
+state_analysis = (
+    df.groupby("state")
+    .agg(
+        Total_Accidents=("state", "count"),
+        Total_Casualties=("casualties", "sum")
+    )
+    .sort_values(by="Total_Accidents", ascending=False)
+    .head(10)
+    .reset_index()
+)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("### Accident Count by State")
+    st.bar_chart(
+        state_analysis.set_index("state")["Total_Accidents"]
+    )
+
+with col2:
+    st.write("### Casualties by State")
+    st.bar_chart(
+        state_analysis.set_index("state")["Total_Casualties"]
+    )
+
+st.dataframe(state_analysis, use_container_width=True)
