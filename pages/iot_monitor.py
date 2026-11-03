@@ -3,7 +3,7 @@ pages/iot_monitor.py
 --------------------
 IoT Simulation & Alert Monitoring — New Streamlit Page.
 
-This file lives in the `pages/` folder so Streamlit automatically adds it
+This file  lives in the `pages/` folder so Streamlit automatically adds it
 to the sidebar navigation without touching app.py.
 
 Features:
