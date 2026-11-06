@@ -42,7 +42,7 @@ Real-time roadside sensor simulation with hazard alert detection:
 
 ---
 
-## ⚙️ Setup & Run
+## ⚙️ Setup & Run 
 
 ```bash
 pip install -r requirements.txt
