@@ -5,7 +5,7 @@ Analyze de-identified accident records to describe patterns by time, road type, 
 ---
 
 ## 📌 Project Overview
-
+ 
 A multi-page **Streamlit** web dashboard built on the **Indian Roads Dataset** (20,000 accident records across Indian cities). The project has two modules:
 
 ### Module 1 — Accident Pattern Analysis Dashboard (`app.py`)
