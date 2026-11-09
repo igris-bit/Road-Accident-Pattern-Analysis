@@ -91,14 +91,9 @@ if selected_state != "All":
 if selected_city != "All":
     df = df[df["city"] == selected_city]
 
-if selected_severity:
-    df = df[df["accident_severity"].isin(selected_severity)]
-
-if selected_weather:
-    df = df[df["weather"].isin(selected_weather)]
-
-if selected_road:
-    df = df[df["road_type"].isin(selected_road)]
+df = df[df["accident_severity"].isin(selected_severity)]
+df = df[df["weather"].isin(selected_weather)]
+df = df[df["road_type"].isin(selected_road)]
 
 # ----------------- MAIN DASHBOARD -----------------
 st.title("🚗 Road Accident Pattern Analysis Dashboard")

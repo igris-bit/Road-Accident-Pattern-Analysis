@@ -31,7 +31,7 @@ Real-time roadside sensor simulation with hazard alert detection:
 ```
 ├── app.py                              # Main dashboard (Module 1)
 ├── streamlit_app.py                    # Alias of app.py
-├── iot_simulator.py.                   # IoT engine: sensor generator + alert rules (Module 2)
+├── iot_simulator.py                    # IoT engine: sensor generator + alert rules (Module 2)
 ├── pages/
 │   └── iot_monitor.py                  # IoT Streamlit page (Module 2)
 ├── indian_roads_dataset.csv            # Dataset: 20,000 rows × 24 columns
