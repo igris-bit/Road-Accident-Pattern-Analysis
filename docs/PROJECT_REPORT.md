@@ -115,3 +115,4 @@ The project successfully bridges retrospective data analysis with proactive indu
 - **Physical Hardware Interconnect:** Flashing ESP32/Raspberry Pi microcontrollers to feed real roadside LoRaWAN/MQTT sensor packets into the cloud broker.
 - **Computer Vision Integration:** Incorporating YOLOv8 video streams to automatically detect vehicle collisions from CCTV feeds.
 - **V2X Communication:** Broadcasting emergency hazard warnings directly into connected vehicle dashboards (Vehicle-to-Everything).
+

@@ -42,3 +42,4 @@ This document serves as the official audit record of member contributions across
 > *"As team leader, I confirm that the evaluation above is an honest reflection of git contributions, code commits, and project responsibilities delivered by each member. Members marked 'High' and 'Medium' actively developed and tested the core features. Members marked 'Low' had minimal code contributions and primarily assisted in review."*
 >
 > — **Lovish Chauhan** *(Team Leader, IIoT-3 Project)*
+

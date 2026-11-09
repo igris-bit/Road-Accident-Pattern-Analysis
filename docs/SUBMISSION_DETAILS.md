@@ -60,3 +60,4 @@ https://github.com/igris-bit/Road-Accident-Pattern-Analysis
 PROJECT SUMMARY:
 Our IIoT-3 project analyzes 20,000 Indian road accident records across 8 major metropolitan corridors and pairs historical pattern recognition with an Industrial IoT edge simulation. The system features a closed-loop architecture consisting of roadside telemetry sensing, empirical machine learning severity prediction, dynamic Variable Message Sign (VMS) speed overrides, and Computer-Aided Dispatch (CAD) to Level-1 trauma centres (AIIMS, KEM, PGIMER, etc.).
 ```
+
