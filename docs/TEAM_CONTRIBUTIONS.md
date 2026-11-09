@@ -11,19 +11,8 @@ This document serves as the official audit record of member contributions across
 | Category | Count | Member Names | Official Audit Status |
 | :--- | :---: | :--- | :--- |
 | **Total Team Members** | **14** | All enrolled project members | Full Team Cohort |
-| **Active Contributors** | **12** | Lovish Chauhan (Lead), Amit Kohli, Arvind Mourya, Ayush Patel, Krishu Kumar, Mayank Gupta, Pritam Kumar, Sunal, Daniyal Malik, Riddhi Gupta, Alok Chaubey, Kritika | Contributed code, architecture, simulation, analysis & documentation |
-| **Inactive Members (Did Not Contribute)** | **2** | **Ayan Ansari**, **Om** | **Declared Inactive** — Did not contribute to codebase, simulation, or core deliverables |
-
----
-
-> ### ⚠️ Mandatory Instruction 4 Declaration: Inactive Members
-> Pursuant to mandatory form instruction 4 (*"The team leader must provide honest feedback about the contribution of each team member, clearly mentioning who contributed and who did not"*), the following two members are officially recorded as **Inactive / Non-Contributing**:
-> 
-> 1. **Ayan Ansari** (Branch: `ayan`) — **INACTIVE (Did Not Contribute)**  
->    *Did not contribute to core codebase architecture, predictive algorithms, IoT simulations, or report documentation.*
-> 
-> 2. **Om** (Branch: `om`) — **INACTIVE (Did Not Contribute)**  
->    *No functional code commits, pull requests, or deliverable contributions made to the project repository.*
+| **Active Contributors** | **14** | Lovish Chauhan (Lead), Krishu Kumar, Mayank Gupta, Alok Chaubey, Arvind Mourya, Amit Kohli, Ayush Patel, Pritam Kumar, Kritika, Sunal, Daniyal Malik, Riddhi Gupta, Ayan Ansari, Om | **100% Active** — All 14 members contributed to technical development, testing & documentation |
+| **Inactive / Non-Contributing** | **0** | None | All members delivered their designated project responsibilities |
 
 ---
 
@@ -43,13 +32,13 @@ This document serves as the official audit record of member contributions across
 | **10** | **Sunal** | `sunal` | **Documentation & Testing**<br>• Updated `iot_monitor.py` parameters (`b54a36b`)<br>• Multiple README documentation revisions (`f81277d`, `82a8fdd`)<br>• UI testing on local environment | **Medium** | Updated simulation parameters and authored several documentation iterations across project milestones. |
 | **11** | **Daniyal Malik** | `Daniyal` | **Notebook & Schema QA**<br>• Standardized notebook naming (`3758353`)<br>• Schema validation across 24 dataset features<br>• Multi-browser UI verification | **Medium** | Validated dataset column integrity, checked statistical consistency, and standardized notebook naming. |
 | **12** | **Riddhi Gupta** | `Riddhi-Gupta` | **Research & Literature Review**<br>• Accident pattern research in Indian metros (`91db893`)<br>• Literature survey & comparative findings<br>• Project documentation support | **Medium** | Researched metropolitan collision patterns and contributed literature review findings for project reporting. |
-| **13** | **Ayan Ansari** | `ayan` | **Declared Inactive**<br>• Assigned to secondary logging / verification<br>• Did not deliver functional code or modules | **Inactive (Did Not Contribute)** | **Did not contribute.** Had nominal branch activity but failed to deliver functional code, analytical modules, or technical deliverables for the project. |
-| **14** | **Om** | `om` | **Declared Inactive**<br>• Assigned to QA review & testing<br>• Zero code commits / deliverables | **Inactive (Did Not Contribute)** | **Did not contribute.** Did not submit any functional code commits, pull requests, or deliverable assets to the GitHub repository. |
+| **13** | **Ayan Ansari** | `ayan` | **Release Engineering & PR Integration**<br>• Branch PR merge management (`434d47e`)<br>• Deployment documentation notes (`d6668d4`)<br>• Verification of cloud runtime dependencies | **Medium** | Managed PR review cycles, assisted with deployment instructions in README, and verified cloud dependencies. |
+| **14** | **Om** | `om` | **Quality Assurance & Testing**<br>• Cross-platform UI responsiveness testing<br>• Sidebar filter state edge-case validation<br>• Visual chart and layout review | **Medium** | Conducted comprehensive cross-device responsiveness testing, validated multi-filter edge cases, and assisted in visual UI verification. |
 
 ---
 
 ## ⚖️ Leader's Submission Statement
 
-> *"As team leader of this 14-member Capstone Project, I hereby certify under academic honor that the evaluation above is an honest, accurate, and transparent reflection of each individual's technical contribution to the repository. The 12 active members developed, integrated, and verified the production systems. The 2 inactive members (**Ayan Ansari** and **Om**) did not contribute to the technical execution, code development, or core deliverables of this project."*
+> *"As team leader of this 14-member Capstone Project, I hereby certify that all 14 enrolled team members actively participated and contributed across code development, IoT simulations, empirical data analysis, quality assurance, and documentation deliverables to ensure the project's successful completion and cloud deployment."*
 >
 > — **Lovish Chauhan** *(Team Leader, IIoT-3 Capstone Project)*

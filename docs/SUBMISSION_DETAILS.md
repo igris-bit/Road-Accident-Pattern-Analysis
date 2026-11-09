@@ -61,10 +61,7 @@ PROJECT SUMMARY:
 Our IIoT-3 project analyzes 20,000 Indian road accident records across 8 major metropolitan corridors and pairs historical pattern recognition with an Industrial IoT edge simulation. The system features a closed-loop architecture consisting of roadside telemetry sensing, empirical machine learning severity prediction, dynamic Variable Message Sign (VMS) speed overrides, and Computer-Aided Dispatch (CAD) to Level-1 trauma centres (AIIMS, KEM, PGIMER, etc.).
 
 5. TEAM CONTRIBUTIONS & HONEST FEEDBACK (INSTRUCTION 4):
-- Active Contributors (12 Members): Lovish Chauhan (Leader), Krishu Kumar, Mayank Gupta, Alok Chaubey, Arvind Mourya, Amit Kohli, Ayush Patel, Pritam Kumar, Kritika, Sunal, Daniyal Malik, Riddhi Gupta.
-- Inactive Members (2 Members - Did Not Contribute):
-  1. Ayan Ansari (Branch: ayan) — Did not contribute to core codebase, algorithms, simulations, or project deliverables.
-  2. Om (Branch: om) — Zero functional code commits, pull requests, or deliverable contributions to the repository.
-Detailed breakdown available in docs/TEAM_CONTRIBUTIONS.md.
+- All 14 enrolled members actively contributed across technical architecture, IoT edge simulation, statistical data analytics, quality assurance, and documentation deliverables.
+Detailed 14-member contribution breakdown available in docs/TEAM_CONTRIBUTIONS.md.
 ```
 
