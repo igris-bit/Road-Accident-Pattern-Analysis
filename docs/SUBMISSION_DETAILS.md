@@ -11,7 +11,7 @@
 | **1** | **GitHub Repository** | `https://github.com/igris-bit/Road-Accident-Pattern-Analysis` | ✅ Public & Accessible |
 | **2** | **Project PPT** | `[Paste your Google Slides / Canva / Drive Link here]` | ⚠️ Ensure set to *Anyone with link can view* |
 | **3** | **Project Report** | `[Paste your Google Docs / PDF Drive Link here]` | ⚠️ Ensure set to *Anyone with link can view* |
-| **4** | **Live Deployment Link** | `[Paste your Streamlit Cloud live link here]` | ✅ Accessible online |
+| **4** | **Live Deployment Link** | `https://road-accident-pattern-analysis.streamlit.app/` | ✅ Live & Publicly Accessible |
 
 ---
 
@@ -49,7 +49,7 @@ TEAM LEADER: Lovish Chauhan
 https://github.com/igris-bit/Road-Accident-Pattern-Analysis
 
 2. LIVE DEPLOYMENT URL:
-[Paste your live Streamlit URL here]
+https://road-accident-pattern-analysis.streamlit.app/
 
 3. PROJECT PPT (PRESENTATION):
 [Paste your viewable presentation link here]

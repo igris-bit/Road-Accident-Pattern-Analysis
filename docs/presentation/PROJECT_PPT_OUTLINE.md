@@ -10,7 +10,7 @@
 * **Subtitle:** Intelligent Transportation Systems (ITS) & Closed-Loop Actuation
 * **Team Leader:** Lovish Chauhan
 * **Team Members:** 14 Members (Listed with roles)
-* **Links:** GitHub Repository & Live Streamlit App
+* **Links:** GitHub Repository & Live App: [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)
 
 ---
 

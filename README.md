@@ -1,6 +1,6 @@
 # 🚗 Road Accident Pattern Analysis & IIoT Smart Highway Monitoring
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://road-accident-pattern-analysis.streamlit.app/)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg?logo=python&logoColor=white)
 ![Domain](https://img.shields.io/badge/Domain-IIoT%20%7C%20ITS%20%7C%20Data%20Science-teal)
 ![Dataset](https://img.shields.io/badge/Dataset-20%2C000%20Records%20%7C%208%20Corridors-orange)
@@ -9,6 +9,7 @@
 > **Course Project:** Industrial Internet of Things (IIoT-3)  
 > **Team Leader:** Lovish Chauhan (`lovishneeraj@gmail.com`)  
 > **Team Size:** 14 Members  
+> **🌐 Live Deployment Link:** [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)  
 > **GitHub Repository:** [https://github.com/igris-bit/Road-Accident-Pattern-Analysis](https://github.com/igris-bit/Road-Accident-Pattern-Analysis)  
 
 ---
@@ -193,7 +194,7 @@ Navigate to **IoT Monitor** in the sidebar to access Module 2 (IIoT Simulation &
 | **1. GitHub Repository** | Public Git Repository | [https://github.com/igris-bit/Road-Accident-Pattern-Analysis](https://github.com/igris-bit/Road-Accident-Pattern-Analysis) |
 | **2. Project PPT** | PowerPoint Presentation | [`docs/presentation/Road_Accident_Pattern_Analysis_Presentation.pptx`](docs/presentation/Road_Accident_Pattern_Analysis_Presentation.pptx) |
 | **3. Project Report** | Academic PDF Report | [`docs/report/Road_Accident_Pattern_Analysis_Project_Report.pdf`](docs/report/Road_Accident_Pattern_Analysis_Project_Report.pdf) |
-| **4. Live Deployment** | Web Application | *Deployed on Streamlit Community Cloud* |
+| **4. Live Deployment** | Web Application | [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/) |
 | **5. Team Audit Matrix** | Markdown Document | [`docs/TEAM_CONTRIBUTIONS.md`](docs/TEAM_CONTRIBUTIONS.md) |
 | **6. Submission Details** | Form Template | [`docs/SUBMISSION_DETAILS.md`](docs/SUBMISSION_DETAILS.md) |
 

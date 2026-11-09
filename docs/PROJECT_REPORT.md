@@ -4,7 +4,7 @@
 **Team Leader:** Lovish Chauhan (`lovishneeraj@gmail.com`)  
 **Team Size:** 14 Members  
 **GitHub Repository:** [https://github.com/igris-bit/Road-Accident-Pattern-Analysis](https://github.com/igris-bit/Road-Accident-Pattern-Analysis)  
-**Live Deployment:** [Streamlit Cloud Application]  
+**Live Deployment:** [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)  
 
 ---
 
