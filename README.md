@@ -8,7 +8,7 @@ Analyze de-identified accident records to describe patterns by time, road type, 
  
 A multi-page **Streamlit** web dashboard built on the **Indian Roads Dataset** (20,000 accident records across Indian cities). The project has two modules:
 
-### Module 1 — Accident Pattern Analysis Dashboard (`streamlit_app.py` / `app.py`)
+### Module 1 — Accident Pattern Analysis Dashboard (`streamlit_app.py`)
 Interactive analysis of historical accident data with:
 - Filters: State, City, Severity, Weather, Road Type
 - Charts: Accidents by Hour, Weather, Severity, Road Type
@@ -33,11 +33,10 @@ Real-time roadside sensor simulation and industrial actuation across 8 Indian co
 ## 🗂️ File Structure
 
 ```
-├── app.py                              # Main dashboard (Module 1)
-├── streamlit_app.py                    # Alias of app.py
-├── iot_simulator.py.                   # IoT engine: sensor generator + alert rules (Module 2)
+├── streamlit_app.py                    # Main dashboard & predictive engine (Module 1)
+├── iot_simulator.py                    # IIoT engine: sensor generator, alerts, VMS & CAD (Module 2)
 ├── pages/
-│   └── iot_monitor.py                  # IoT Streamlit page (Module 2)
+│   └── iot_monitor.py                  # IIoT live monitoring page (Module 2)
 ├── indian_roads_dataset.csv            # Dataset: 20,000 rows × 24 columns
 ├── Road_Accident_Pattern_Analysis.ipynb # EDA notebook (Google Colab)
 ├── requirements.txt                    # Python dependencies
@@ -50,7 +49,7 @@ Real-time roadside sensor simulation and industrial actuation across 8 Indian co
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 Navigate to **IoT Monitor** in the sidebar for the simulation module.
