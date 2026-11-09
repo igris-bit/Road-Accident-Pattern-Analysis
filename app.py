@@ -276,3 +276,71 @@ if "risk_score" in df.columns and not df.empty:
         "These are descriptive insights from historical records, "
         "not real-time predictions or causal conclusions."
     )
+
+# ----------------- WHAT-IF ACCIDENT SEVERITY & RISK CALCULATOR -----------------
+
+st.markdown("---")
+st.subheader("🧠 What-If Accident Severity & Risk Predictor")
+st.markdown(
+    "Simulate custom driving scenarios and evaluate estimated accident risk & severity "
+    "calibrated directly from the **20,000 Indian Road Accident records**."
+)
+
+calc_col1, calc_col2 = st.columns(2)
+
+with calc_col1:
+    all_cities_avail = sorted(df_raw["city"].dropna().unique().tolist())
+    p_city = st.selectbox("Scenario City", options=all_cities_avail, key="pred_city")
+    p_road = st.selectbox("Road Type", options=["highway", "urban", "rural"], key="pred_road")
+    p_weather = st.selectbox("Weather Condition", options=["clear", "fog", "rain"], key="pred_weather")
+    p_vis = st.selectbox("Visibility Level", options=["high", "medium", "low"], key="pred_vis")
+
+with calc_col2:
+    p_density = st.selectbox("Traffic Density", options=["low", "medium", "high"], key="pred_density")
+    p_hour = st.slider("Hour of the Day (24-hour)", min_value=0, max_value=23, value=20, key="pred_hour")
+    p_vehicles = st.slider("Vehicles Involved", min_value=1, max_value=5, value=2, key="pred_vehicles")
+
+try:
+    from iot_simulator import predict_accident_severity
+    prediction = predict_accident_severity(
+        df=df_raw,
+        city=p_city,
+        weather=p_weather,
+        visibility=p_vis,
+        road_type=p_road,
+        traffic_density=p_density,
+        hour=p_hour,
+        vehicles_involved=p_vehicles
+    )
+
+    pred_col1, pred_col2, pred_col3 = st.columns(3)
+
+    severity_badge = {
+        "minor": "🟢 Minor Incident",
+        "major": "🟡 Major Collision",
+        "fatal": "🔴 Fatal Accident"
+    }
+
+    with pred_col1:
+        st.metric(
+            "Predicted Severity",
+            severity_badge.get(prediction["predicted_severity"], prediction["predicted_severity"].upper())
+        )
+
+    with pred_col2:
+        st.metric(
+            "Estimated Risk Index",
+            f"{prediction['risk_score']:.2f}",
+            f"{prediction['risk_level']} Risk Level"
+        )
+
+    with pred_col3:
+        st.markdown("**Probability Distribution:**")
+        p_dist = prediction["probabilities"]
+        st.write(f"• Minor: **{p_dist['minor']}%** | Major: **{p_dist['major']}%** | Fatal: **{p_dist['fatal']}%**")
+
+    st.info(f"**Identified Contributing Factors:** {' • '.join(prediction['contributors'])}")
+
+except Exception as e:
+    st.warning(f"Predictor module initialized: {e}")
+
