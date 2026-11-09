@@ -1,187 +1,152 @@
-# 🖥️ Project Presentation (PPT) Slide Deck Outline
+# 🖥️ Project Presentation (PPT) — Concise 10-Slide Deck
 
 **Project Title:** Road Accident Pattern Analysis & IIoT Smart Highway Monitoring  
-**Course:** IIoT-3 | **Team:** 14 Members | **Team Leader:** Lovish Chauhan  
+**Course:** Industrial Internet of Things (IIoT-3)  
+**Team Leader:** Lovish Chauhan (`lovishneeraj@gmail.com`)  
+**Team Size:** 14 Members  
+**🌐 Live Web App:** [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)  
+**GitHub Repository:** [https://github.com/igris-bit/Road-Accident-Pattern-Analysis](https://github.com/igris-bit/Road-Accident-Pattern-Analysis)  
 
 ---
 
-### Slide 1: Title Slide
+### Slide 1: Title & Overview
 * **Title:** Road Accident Pattern Analysis & IIoT Smart Highway Monitoring
-* **Subtitle:** Intelligent Transportation Systems (ITS) & Closed-Loop Actuation
-* **Team Leader:** Lovish Chauhan
-* **Team Members:** 14 Members (Listed with roles)
-* **Links:** GitHub Repository & Live App: [https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)
+* **Subtitle:** Closed-Loop Intelligent Transportation System (ITS) • Empirical AI Severity Prediction • Dynamic VMS Actuation
+* **Course:** Industrial Internet of Things (IIoT-3)
+* **Team:** Lovish Chauhan *(Team Leader)* | 14 Members
+* **Live Deployment:** `https://road-accident-pattern-analysis.streamlit.app/`
 
 ---
 
-### Slide 2: Problem Statement & Motivation
-* **The Challenge:** Over 150,000 traffic fatalities annually in India; traditional retrospective analysis cannot prevent accidents before they occur.
-* **The Gap:** Lack of real-time sensor integration connecting roadside environmental hazards to automated driver warnings and emergency dispatch.
-* **Our Solution:** A hybrid platform combining **20,000 real accident records** with an **Industrial IoT (IIoT) edge simulation, dynamic VMS highway signs, and automated hospital CAD dispatch**.
+### Slide 2: Problem Statement & Engineering Solution
+* **The Critical Problem:**
+  - Over 150,000 fatal road collisions occur annually across India.
+  - Highways suffer from severe winter fog, heavy monsoons, and high vehicle speed differentials.
+  - Critical delays in emergency medical assistance during the life-saving "Golden Hour".
+* **The Technological Gap:**
+  - Traditional safety systems are purely retrospective paper dossiers.
+  - Zero real-time integration between roadside weather sensors and physical highway speed signs.
+  - Absence of automated dispatch connecting hazard alerts to emergency trauma centers.
+* **Our Engineering Solution:**
+  - Hybrid Closed-Loop IIoT Platform combining 20,000 real records with live sensing.
+  - Empirical Bayesian AI Severity Predictor (Minor, Major, Fatal likelihoods).
+  - Dynamic Overhead Variable Message Sign (VMS) speed overrides (80 &rarr; 50 &rarr; 35 km/h).
+  - Automated Computer-Aided Dispatch (CAD) to Level-1 trauma centers with 5–8 min ambulance ETAs.
 
 ---
 
-### Slide 3: Dataset & Data Preprocessing
-* **Source:** `indian_roads_dataset.csv` (20,000 empirical accident records).
-* **Geographical Scope:** 8 major metropolitan corridors: *Bangalore, Chandigarh, Chennai, Delhi, Hyderabad, Kolkata, Mumbai, Pune*.
-* **24 Core Features:** Spatial (Lat/Lon), Temporal (Hour, Weekend, Peak), Environmental (Weather, Visibility, Temp), Traffic (Density, Lanes, Signal), Severity (Minor, Major, Fatal).
-* **Data Cleaning:** Deduplication, null imputation, dropping non-informative attributes (`festival`), coordinate standardization.
+### Slide 3: Dataset Grounding (20,000 Real Records Across 8 Corridors)
+* **Dataset Attributes & Scope:**
+  - **Source:** `indian_roads_dataset.csv` (20,000 empirical accident records × 24 features).
+  - **8 Metro Corridors:** Bangalore, Chandigarh, Chennai, Delhi, Hyderabad, Kolkata, Mumbai, Pune.
+  - **Spatial Features:** Real GPS Coordinates (Lat/Lon), Road Classifications (Highway, Rural, Urban), Lane Counts.
+  - **Environmental:** Ambient Weather (Clear, Fog, Rain), Optical Visibility Level, Temperature (°C).
+  - **Traffic & Impact:** Traffic Density, Vehicles Involved, Casualties, Severity, Risk Score.
+* **Data Pipeline & Cleaning:**
+  - Complete Deduplication: Removed duplicate entries and incomplete GPS rows.
+  - Noise Elimination: Dropped uninformative columns (e.g. `festival`) to prevent overfitting.
+  - Coordinate Normalization: Bounded coordinates strictly to actual metropolitan highway grids.
+  - Peak-Hour Extraction: Engineered commuter peak-hour binary flags (08:00–10:00 & 17:00–20:00).
+  - Risk Calibration: Normalized composite hazard index into `[0.00, 1.00]` scale.
 
 ---
 
-### Slide 4: 3-Tier Industrial IoT Architecture
-* **Tier 1 — Perception Layer (Edge Sensing):** Optical visibility sensors, roadside weather stations, speed radar units, traffic counters.
-* **Tier 2 — Network & Processing Layer:** IoT Gateway telemetry streaming (MQTT simulation), rule-based hazard engine, empirical Bayesian severity calculator.
-* **Tier 3 — Application & Actuation Layer:** Streamlit Community Cloud UI, dynamic overhead Variable Message Signs (VMS), and automated CAD hospital routing.
+### Slide 4: 3-Tier Industrial IoT (IIoT) System Architecture
+* **Tier 1 — Perception Layer (Edge Roadside Sensing):**
+  - Optical Visibility Meters, Weather Station, Radar Speed Doppler, Inductive Loop Traffic Counter.
+  - Collects continuous telemetry: ambient temperature, optical transmission (fog), precipitation, and speed.
+* **Tier 2 — Network & Edge Layer (Inference):**
+  - IoT Gateway Node, Rule-Based Hazard Engine, Empirical Bayesian Predictor.
+  - Simulates MQTT telemetry streaming. Applies multi-factor hazard checks and computes instant severity likelihoods.
+* **Tier 3 — Application & Actuation Layer (Command & Safety):**
+  - Streamlit Community Cloud Operator Console, Dynamic VMS Highway Signboard, Emergency CAD Dispatch.
+  - Renders live console. Overrides overhead LED speed limits and auto-dispatches Level-1 trauma centers with ETAs.
 
 ---
 
-### Slide 5: Historical Analytics Dashboard (Module 1)
-* **Interactive Drill-Down:** Dynamic multi-factor filters by State, City, Severity, Road Type, and Weather.
-* **Key Metric Indicators:** Total Accidents, Casualties, Fatal %, and Average Risk Index.
-* **Top 10 States Ranking:** Bar chart comparisons correlating accident volume with casualty severity.
-* **Summary Tables:** Percentage breakdown of environmental and temporal hazard factors.
+### Slide 5: Module 1 — Historical Accident Analytics Dashboard
+* **Multivariate Dynamic Filtering:**
+  - Drill down across State, City, Severity, Road Type, and Weather condition in real time.
+  - Cascading filters: selecting a state automatically updates available city corridors.
+  - Instant recalculation of casualty rates and collision metrics.
+* **2×2 Analytical Matrix:**
+  - 1. Accidents by Hour of Day: Captures distinct 24h commuting and nighttime peaks.
+  - 2. Weather Breakdown: Clear vs. Rain vs. Fog distribution.
+  - 3. Severity Split: Minor incidents vs. Major collisions vs. Fatal crashes.
+  - 4. Road Infrastructure: High-speed Highways vs. Urban vs. Rural corridors.
+* **State Ranking & Data Audit:**
+  - Top 10 Indian States aggregated by total accidents and casualty counts.
+  - Raw and filtered dataset inspector with one-click CSV export.
 
 ---
 
-### Slide 6: "What-If" AI Severity Predictor (Module 1)
-* **What it does:** Allows highway operators to simulate hypothetical driving scenarios and receive instant accident severity probability distributions.
-* **Inputs:** Scenario City, Weather (*Clear/Fog/Rain*), Visibility (*High/Med/Low*), Road Type (*Highway/Urban/Rural*), Hour of Day, Vehicles Involved.
-* **Outputs:**
-  - Predicted Severity: *Minor Incident*, *Major Collision*, or *Fatal Accident*.
-  - Estimated Risk Index (0.00 – 1.00 scale).
-  - Probability Breakdown (% Minor, % Major, % Fatal).
-  - Automated Contributing Hazard Flags.
+### Slide 6: AI Feature — Interactive "What-If" Severity Predictor
+* **Scenario Simulator Inputs:**
+  - Target City Corridor (Bangalore, Delhi, Mumbai, Pune, etc.).
+  - Road Classification (Highway, Rural, Urban).
+  - Weather Condition (Clear, Fog, Rain) & Optical Visibility (High, Medium, Low).
+  - Traffic Density (Low, Medium, High) & 24-Hour Time Slider (0 to 23 Hours).
+  - Multi-Vehicle Involvement count (1 to 5 vehicles).
+* **Instant Empirical AI Outputs:**
+  - **1. Predicted Severity:** Classifies incident as Minor Incident, Major Collision, or Fatal Accident.
+  - **2. Probability Distribution:** Exact normalized likelihoods (e.g. Minor: 48% | Major: 36% | Fatal: 16%).
+  - **3. Composite Risk Index:** Unified 0.00 to 1.00 score with Low/Moderate/High status.
+  - **4. Contributing Hazards:** Flags compounding drivers (e.g. Dense Fog + Night Hours + Multi-Vehicle).
+  - **5. Grounded Calibration:** Directly calibrated from empirical Bayes estimates on 20,000 real records.
 
 ---
 
-### Slide 7: IIoT Edge Telemetry & Hazard Engine (Module 2)
-* **Telemetry Streaming:** Simulated live packet generation from roadside units (5-second auto-refresh option).
-* **Rule-Based Hazard Escalation:**
-  - `SAFE`: Optimal visibility and dry road conditions.
-  - `LOW`: Peak-hour commuter traffic congestion.
-  - `MEDIUM`: Low visibility, wet pavement, or extreme temperatures (>42°C / <10°C).
-  - `HIGH`: Dense fog at night or heavy rain during highway peak hours.
+### Slide 7: Module 2 — Roadside Telemetry & Hazard Alert Engine
+* **Telemetry Streaming:** Simulated live packet generation from roadside IoT units (5-second auto-refresh option).
+* **Multi-Tier Hazard Triage:**
+  - **🟢 SAFE / NORMAL:** Clear visibility, dry pavement, normal flow &rarr; Standard speed limits maintained.
+  - **🔵 LOW ADVISORY:** Peak-hour commuter congestion on urban roads &rarr; Lane discipline & delay advisories.
+  - **🟡 MEDIUM WARNING:** Daytime low visibility, rain, extreme heat (&ge;42°C) &rarr; Advisory speed reduction to 50 km/h.
+  - **🔴 HIGH HAZARD:** Dense fog at night, highway rain + heavy traffic, risk &ge; 0.70 &rarr; Mandatory speed override (35 km/h) & CAD ambulance dispatch.
 
 ---
 
-### Slide 8: Smart Highway Variable Message Sign (VMS) Actuator
-* **Closed-Loop Actuation:** Moves beyond passive data visualization to physical roadside safety intervention.
-* **Overhead Electronic LED Billboard:** Styled with retro-illuminated matrix typography.
-* **Dynamic Speed Limit Overrides:**
-  - Normal conditions: 80 km/h.
-  - Heavy rain/traffic: 50 km/h.
-  - Critical fog/low visibility: Mandatory reduction to 35 km/h with hazard flasher advisory.
+### Slide 8: Smart Actuation — Dynamic VMS & Emergency CAD Dispatch
+* **💡 Dynamic VMS Highway Signboard:**
+  - Closed-Loop Actuation: Real-time physical intervention rather than passive dashboard logging.
+  - Overhead Electronic Matrix: Displays glowing condition-specific warnings and speed overrides.
+  - Dynamic Speed Limit Dampening: Normal (80 km/h) &rarr; Rain/Traffic (50 km/h) &rarr; Dense Fog/Hazard (Mandatory 35 km/h).
+  - Driver Advisories: Prompts "INCREASE HEADWAY", "HAZARD LIGHTS ON", "SLIPPERY ROAD".
+* **🚑 Automated CAD Emergency Dispatch:**
+  - Computer-Aided Dispatch (CAD): Automates emergency response within the critical "Golden Hour".
+  - Regional Level-1 Trauma Hospital Links:
+    - *Delhi:* AIIMS Apex Trauma Centre
+    - *Mumbai:* KEM Hospital Emergency Unit
+    - *Bangalore:* Victoria Hospital Trauma Care
+    - *Chandigarh:* PGIMER Level-1 Trauma Wing
+  - Real-Time Telematics: Computes assigned ambulance unit ID, highway patrol cruiser, and 5–8 min arrival ETAs.
 
 ---
 
-### Slide 9: Automated Emergency CAD Dispatch Interconnect
-* **Computer-Aided Dispatch (CAD):** Automates emergency response within the critical "Golden Hour".
-* **Corridor-Specific Trauma Hospitals:**
-  - *Delhi:* AIIMS Apex Trauma Centre
-  - *Mumbai:* KEM Hospital Emergency Unit
-  - *Bangalore:* Victoria Hospital Trauma Care
-  - *Chandigarh:* PGIMER Level-1 Trauma Wing
-* **Telemetry Telematics:** Displays allocated ambulance unit ID, highway patrol cruiser, distance (km), and real-time ETA.
+### Slide 9: Team Workload & Contributions by Branch (14 Members)
+* **Architecture & Core Modules (Col 1):**
+  - **Lovish Chauhan (Lead) [Branch: `Lovish`]:** Live deployment on Streamlit Cloud, What-If Severity Predictor, VMS LED Actuator, CAD dispatch, Windows runner, codebase refactoring.
+  - **Krishu Kumar [Branch: `krishu`]:** Created foundational Streamlit dashboard, integrated dataset, authored Colab research notebook, configured Linux packages.
+  - **Mayank Gupta [Branch: `mayank`]:** Added core IoT Simulation module (`iot_simulator.py`, `pages/iot_monitor.py`), integrated Pydeck & Numpy requirements.
+  - **Alok Chaubey [Branch: `alok`]:** Resolved IoT simulation syntax & deduplication, synchronized state in `streamlit_app.py`, added Dev Container environment.
+  - **Arvind Mourya [Branch: `arvind`]:** Implemented State-Wise Accident Analysis module, calculated state grouping aggregations and comparative charts.
+* **Features, Analytics & Documentation (Col 2):**
+  - **Amit Kohli [Commit: `c8f4245`]:** Engineered Accident Risk & Safety Insights banner with High/Moderate threshold alerts and adverse weather counters.
+  - **Ayush Patel [Branch: `ayush`]:** Managed PR #4 integration, synchronized `streamlit_app.py` updates, contributed setup instructions in README.
+  - **Pritam Kumar [Branch: `pritam`]:** Enhanced `iot_simulator.py` sensor generator and refined IoT monitor UI alert cards and multi-page routing.
+  - **Kritika [Branch: `kritikaaa`]:** Authored `CONTRIBUTING.md` setup guide, validated IoT simulation telemetry parameters.
+  - **Sunal, Daniyal, Riddhi, Ayan, Om:** Sunal (parameter updates), Daniyal (notebook standardization), Riddhi (accident research), Ayan (PR #3 merge), Om (QA review).
 
 ---
 
-### Slide 10: Interactive Geospatial Hotspot Map
-* **Pydeck GIS Mapping:** 3D interactive Scatterplot layer rendering historical accident blackspots across Indian metropolitan corridors.
-* **Visual Severity Coding:** Blue (*Minor*), Orange (*Major*), Red (*Fatal*), and Green (*Active IoT Sensor Node*).
-* **Audit Trail:** Session-based incident log with one-click timestamped CSV export for municipal audits.
-
----
-
-### Slide 11: Team Contributions by Branch — Core Architecture & Infrastructure (1/3)
-* **1. Lovish Chauhan (Team Leader) — Branch: `Lovish` [High / Lead]**
-  - Spearheaded overall system architecture, live deployment on Streamlit Cloud, and repository governance.
-  - Built the **What-If ML Accident Severity & Risk Predictor** calibrated on all 20,000 empirical records.
-  - Engineered the **Smart Highway Variable Message Sign (VMS)** overhead LED actuator with speed overrides.
-  - Implemented **Level-1 Trauma Hospital Emergency CAD Dispatch** with real-time telematics and ETAs.
-  - Refactored codebase: removed redundant `app.py` and standardized production strictly on `streamlit_app.py`.
-  - Built Windows `run_app.bat` one-click launcher and configured `.vscode` workspace environment for the team.
-* **2. Krishu Kumar — Branch: `krishu` [High]**
-  - Authored the foundational Streamlit dashboard application (commits `fca04dc`, `fd8d996`).
-  - Integrated the initial Indian Roads Dataset (20,000 records) into the data pipeline.
-  - Authored the Google Colab exploratory research notebook (`98f279f`).
-  - Configured Linux system packages (`packages.txt`) and unpinned Streamlit dependencies (`de73c83`, `14f71a2`).
-* **3. Mayank Gupta — Branch: `mayank` / `mayankgupta82357-crypto-patch-1` [High]**
-  - Added the foundational IoT Simulation & Alert Monitoring module (commit `269d0c1`).
-  - Created initial `iot_simulator.py` sensor generator and `pages/iot_monitor.py`.
-  - Integrated Pydeck and Numpy requirements for geospatial hotspot plotting.
-  - Contributed layout restructuring and patch synchronization (`2f38c7e`).
-* **4. Alok Chaubey — Branch: `alok` [High]**
-  - Resolved syntax errors and deduplicated sensor generator functions (commit `5f14dde`).
-  - Synchronized state variables between `streamlit_app.py` and multi-page components.
-  - Added the official Dev Container environment configuration (`e5dfaf4`).
-  - Managed Pull Request #8 integration into origin.
-
----
-
-### Slide 12: Team Contributions by Branch — Analytics & Feature Modules (2/3)
-* **5. Arvind Mourya — Branch: `arvind` / `ayush-road-accident-analysis` [High]**
-  - Implemented the **State-Wise Accident Analysis** module (commit `567d35e`).
-  - Built grouping aggregations calculating accident volume and casualties for Top 10 Indian states.
-  - Integrated dual bar charts comparing state frequencies and casualty ratios.
-  - Conducted data validation on state-level accident tallies.
-* **6. Amit Kohli — Commit: `c8f4245` [High]**
-  - Engineered the **Accident Risk & Safety Insights** dashboard banner (commit `c8f4245`).
-  - Added threshold-based visual alerts: High Risk ($\ge 0.7$), Moderate ($\ge 0.4$), and Lower Risk.
-  - Implemented adverse weather keyword counters (rain, fog, storm) for road safety advisories.
-  - Formulated descriptive safety recommendations for traffic management.
-* **7. Ayush Patel — Branch: `ayush` / `ayush-road-accident-analysis` [High]**
-  - Managed Pull Request #4 integration into the repository (commit `c108d2c`).
-  - Synchronized updates to `streamlit_app.py` (commit `396683d`).
-  - Contributed project setup instructions and feature descriptions in `README.md` (`2c3227a`).
-  - Addressed dataset column formatting and peak-hour validation.
-* **8. Pritam Kumar (Athox-X) — Branch: `pritam` / `kritikaaa` [Medium]**
-  - Enhanced `iot_simulator.py` sensor generator methods (commit `0aa5a8d`).
-  - Refined `pages/iot_monitor.py` alert display cards and UI styling (commit `03be2bc`).
-  - Supported multi-page navigation routing and session persistence.
-  - Conducted parameter checks on simulated weather conditions.
-
----
-
-### Slide 13: Team Contributions by Branch — Engineering, Mapping & Docs (3/3)
-* **9. Kritika — Branch: `kritikaaa` / `krtika` [Medium]**
-  - Authored `CONTRIBUTING.md` team setup guide (commit `17c34b4`).
-  - Verified IoT simulation telemetry parameters and supported documentation.
-* **10. Sunal — Branch: `sunal` / `sunal914917-rgb-patch-1` [Medium]**
-  - Updated `iot_monitor.py` parameters (commit `b54a36b`).
-  - Authored multiple `README.md` documentation iterations (`f81277d`, `82a8fdd`, `fff9bae`).
-* **11. Daniyal Malik — Branch: `Daniyal` [Medium]**
-  - Standardized research notebook filename to `Road_Accident_Pattern_Analysis.ipynb` and updated references (commit `3758353`).
-  - Conducted dataset schema verification.
-* **12. Riddhi Gupta — Branch: `Riddhi-Gupta` [Medium]**
-  - Documented project feature overviews in `README.md` (commits `91db893`, `bad32ef`).
-  - Researched empirical accident patterns and environmental hazard factors in Indian cities.
-* **13. Ayan Ansari — Branch: `ayan` [Low / Partial]**
-  - Managed PR #3 merge from Krishu (commit `434d47e`).
-  - Contributed to deployment documentation updates in `README.md` (`d6668d4`).
-* **14. Om — Branch: `om` [Low / Minimal]**
-  - Participated in peer code review cycles, tested sidebar filter widgets, and assisted in UI responsiveness verification.
-
----
-
-### Slide 14: System Results & Real-World Impact
+### Slide 10: Empirical Results, Real-World Impact & Conclusion
 * **Empirical Hazard Findings:**
-  - Dense winter fog combined with night hours (21:00–05:00) increases fatality probability by **+42%**.
-  - Highways account for **2.3× higher casualty-per-accident severity** compared to urban roads, validating the need for dynamic VMS speed intervention.
-* **Intelligent Transportation Impact:**
-  - Dynamic VMS speed dampening (reducing limits to 35–40 km/h) mitigates multi-vehicle pileups during adverse weather.
-  - Replaces static, unheeded signposts with active, condition-triggered electronic guidance.
-* **Golden Hour Emergency Response:**
-  - Computer-Aided Dispatch (CAD) routing calculates nearest Level-1 trauma centers with **5–8 min ambulance ETAs**.
-  - Drastically cuts response lag, directly improving survival odds for critically injured highway commuters.
-
----
-
-### Slide 15: Conclusion & Future Scope
-* **Key Achievements:** Delivered a fully deployed, zero-error Streamlit Cloud application integrating descriptive analytics with real-time IIoT actuation.
-* **Future Work:**
-  - Hardware integration with ESP32/Raspberry Pi and LoRaWAN gateways.
-  - YOLOv8 computer vision CCTV crash detection.
-  - Vehicle-to-Infrastructure (V2I) connected vehicle warnings.
-* **Q&A:** Open for questions from evaluators.
-
+  - Dense winter fog + night hours (21:00–05:00) causes a **+42% spike in fatal collisions**.
+  - Highways account for **2.3× higher casualty rates per crash** compared to urban roads, validating the need for dynamic VMS speed dampening.
+* **Intelligent Safety Impact:**
+  - Dynamic VMS speed intervention (reducing limits to 35–40 km/h) dampens vehicle approach momentum before blackspots.
+  - Automated CAD dispatch routes Level-1 trauma centers with **5–8 min ambulance ETAs**, cutting response lag within the critical "Golden Hour".
+* **Project Status & Roadmap:**
+  - **✓ Production Ready:** 100% deployed live on Streamlit Community Cloud ([https://road-accident-pattern-analysis.streamlit.app/](https://road-accident-pattern-analysis.streamlit.app/)).
+  - **✓ Unified Architecture:** Single-entrypoint architecture on `streamlit_app.py`.
+  - **Future Roadmap:** Physical ESP32 LoRaWAN hardware flashing and YOLOv8 CCTV crash detection.
