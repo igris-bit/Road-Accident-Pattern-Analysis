@@ -91,14 +91,9 @@ if selected_state != "All":
 if selected_city != "All":
     df = df[df["city"] == selected_city]
 
-if selected_severity:
-    df = df[df["accident_severity"].isin(selected_severity)]
-
-if selected_weather:
-    df = df[df["weather"].isin(selected_weather)]
-
-if selected_road:
-    df = df[df["road_type"].isin(selected_road)]
+df = df[df["accident_severity"].isin(selected_severity)]
+df = df[df["weather"].isin(selected_weather)]
+df = df[df["road_type"].isin(selected_road)]
 
 # ----------------- MAIN DASHBOARD -----------------
 st.title("🚗 Road Accident Pattern Analysis Dashboard")
@@ -212,3 +207,67 @@ with st.expander("🔍 View Raw / Filtered Dataset"):
         mime="text/csv"
     )
 
+# ----------------- STATE-WISE ACCIDENT ANALYSIS -----------------
+
+st.markdown("---")
+st.subheader("🏙️ Top 10 States by Road Accidents")
+
+state_analysis = (
+    df.groupby("state")
+    .agg(
+        Total_Accidents=("state", "count"),
+        Total_Casualties=("casualties", "sum")
+    )
+    .sort_values(by="Total_Accidents", ascending=False)
+    .head(10)
+    .reset_index()
+)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("### Accident Count by State")
+    st.bar_chart(
+        state_analysis.set_index("state")["Total_Accidents"]
+    )
+
+with col2:
+    st.write("### Casualties by State")
+    st.bar_chart(
+        state_analysis.set_index("state")["Total_Casualties"]
+    )
+
+st.dataframe(state_analysis, use_container_width=True)
+
+
+# ----------------- ACCIDENT RISK & SAFETY INSIGHTS -----------------
+
+st.markdown("---")
+st.subheader("🛡️ Accident Risk & Safety Insights")
+
+if "risk_score" in df.columns and not df.empty:
+    current_risk = df["risk_score"].mean()
+
+    if current_risk >= 0.7:
+        st.error("⚠️ High Risk: Extra caution is recommended in the selected conditions.")
+    elif current_risk >= 0.4:
+        st.warning("⚠️ Moderate Risk: Stay alert and maintain safe distance.")
+    else:
+        st.success("✅ Lower Risk: Continue following road safety rules.")
+
+    st.metric("Filtered Average Risk", f"{current_risk:.2f}")
+
+    if "weather" in df.columns:
+        adverse_weather = df["weather"].astype(str).str.lower().isin(
+            ["rain", "fog", "storm", "heavy rain"]
+        ).sum()
+
+        st.info(
+            f"Weather-related records in current selection: {adverse_weather}. "
+            "Drivers should reduce speed and maintain safe distance in poor visibility."
+        )
+
+    st.caption(
+        "These are descriptive insights from historical records, "
+        "not real-time predictions or causal conclusions."
+    )

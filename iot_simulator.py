@@ -36,7 +36,6 @@ ROAD_TYPES         = ["highway", "city road", "rural road", "expressway"]
 RISK_HIGH   = 0.70
 RISK_MEDIUM = 0.45
 
-
 # Additional IoT Sensor Fields
 VEHICLE_SPEED_RANGE = (0, 140)  # Speed in km/h
 
@@ -59,46 +58,6 @@ SENSOR_STATUS = [
     "faulty"
 ]
 
-# Risk and Alert Thresholds
-RISK_MEDIUM = 0.40
-RISK_HIGH = 0.70
-
-# Generate Simulated IoT Sensor Data
-def generate_sensor_reading():
-    return {
-        "vehicle_speed": random.randint(*VEHICLE_SPEED_RANGE),
-        "road_condition": random.choice(ROAD_CONDITIONS),
-        "accident_severity": random.choice(ACCIDENT_SEVERITY),
-        "sensor_status": random.choice(SENSOR_STATUS),
-        "weather": random.choice(WEATHER_CONDITIONS),
-        "visibility": random.choice(VISIBILITY_LEVELS),
-        "traffic_density": random.choice(TRAFFIC_DENSITY),
-        "timestamp": datetime.datetime.now().isoformat()
-    }
-
-# Evaluate Accident Risk and Generate Alert
-def evaluate_risk(accident_probability):
-    if accident_probability >= RISK_HIGH:
-        return "HIGH RISK - Emergency Alert"
-    elif accident_probability >= RISK_MEDIUM:
-        return "MEDIUM RISK - Warning"
-    else:
-        return "LOW RISK - Normal"
-
-# Generate a Complete Simulation Result
-def simulate_accident_risk(accident_probability=None):
-    if accident_probability is None:
-        accident_probability = random.random()
-
-    accident_probability = max(0.0, min(1.0, accident_probability))
-
-    reading = generate_sensor_reading()
-    reading["accident_probability"] = round(accident_probability, 2)
-    reading["emergency_alert"] = evaluate_risk(accident_probability)
-
-    return reading
-
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Sensor Reading Generator
@@ -106,26 +65,31 @@ def simulate_accident_risk(accident_probability=None):
 
 def generate_sensor_reading(city: Optional[str] = None) -> dict:
     """
-    Simulate one IoT sensor reading from a roadside  unit.
+    Simulate one IoT sensor reading from a roadside unit.
 
-    Returns a dict with the same field names used in the real CSV so that
-    alert rules work identically on both real and simulated data.
+    Returns a dict with sensor readings (including speed, road condition, etc.)
+    and standard dataset fields for alert evaluation.
     """
     now = datetime.datetime.now()
 
-    chosen_city    = city if city else random.choice(CITIES)
-    hour           = now.hour                                   # real current hour
-    is_weekend     = 1 if now.weekday() >= 5 else 0
+    chosen_city     = city if city else random.choice(CITIES)
+    hour            = now.hour                                   # real current hour
+    is_weekend      = 1 if now.weekday() >= 5 else 0
 
-    is_peak_hour   = 1 if hour in range(8, 10) or hour in range(17, 20) else 0
+    is_peak_hour    = 1 if hour in range(8, 10) or hour in range(17, 20) else 0
 
-    weather        = random.choice(WEATHER_CONDITIONS)
-    visibility     = random.choice(VISIBILITY_LEVELS)
-    temperature    = random.randint(8, 45)                      # °C, Indian range
+    weather         = random.choice(WEATHER_CONDITIONS)
+    visibility      = random.choice(VISIBILITY_LEVELS)
+    temperature     = random.randint(8, 45)                      # °C, Indian range
     traffic_density = random.choice(TRAFFIC_DENSITY)
-    road_type      = random.choice(ROAD_TYPES)
-    lanes          = random.randint(1, 6)
-    traffic_signal = random.randint(0, 1)
+    road_type       = random.choice(ROAD_TYPES)
+    lanes           = random.randint(1, 6)
+    traffic_signal  = random.randint(0, 1)
+
+    # Additional IoT sensor fields
+    vehicle_speed   = random.randint(*VEHICLE_SPEED_RANGE)
+    road_condition  = random.choice(ROAD_CONDITIONS)
+    sensor_status   = random.choice(SENSOR_STATUS)
 
     # Simulate sensor lat/lon near the chosen city (rough offsets)
     base_coords = {
@@ -164,8 +128,37 @@ def generate_sensor_reading(city: Optional[str] = None) -> dict:
         "road_type":       road_type,
         "lanes":           lanes,
         "traffic_signal":  traffic_signal,
+        "vehicle_speed":   vehicle_speed,
+        "road_condition":  road_condition,
+        "sensor_status":   sensor_status,
         "risk_score":      risk,
     }
+
+
+# Evaluate Accident Risk and Generate Alert
+def evaluate_risk(accident_probability: float) -> str:
+    """Classify accident risk probability into warning levels."""
+    if accident_probability >= RISK_HIGH:
+        return "HIGH RISK - Emergency Alert"
+    elif accident_probability >= RISK_MEDIUM:
+        return "MEDIUM RISK - Warning"
+    else:
+        return "LOW RISK - Normal"
+
+
+# Generate a Complete Simulation Result
+def simulate_accident_risk(accident_probability: Optional[float] = None, city: Optional[str] = None) -> dict:
+    """Generate a complete simulation result combining sensor readings and alert classification."""
+    if accident_probability is None:
+        accident_probability = random.random()
+
+    accident_probability = max(0.0, min(1.0, accident_probability))
+
+    reading = generate_sensor_reading(city=city)
+    reading["accident_probability"] = round(accident_probability, 2)
+    reading["emergency_alert"] = evaluate_risk(accident_probability)
+
+    return reading
 
 
 def _compute_risk_score(weather, visibility, temperature,
@@ -252,6 +245,16 @@ def evaluate_alert(reading: dict) -> dict:
     if r["is_peak_hour"] and r["traffic_density"] == "high" and level == "SAFE":
         alerts.append("🚦 Peak hour with high traffic — congestion warning")
         level = _escalate(level, "LOW")
+
+    # Rule 8: High vehicle speed
+    if r.get("vehicle_speed", 0) >= 100:
+        alerts.append(f"🏎️ High vehicle speed ({r['vehicle_speed']} km/h) — overspeeding hazard")
+        level = _escalate(level, "MEDIUM")
+
+    # Rule 9: Hazardous road surface
+    if r.get("road_condition") in ["slippery", "damaged"]:
+        alerts.append(f"⚠️ Road surface condition is {r['road_condition']} — reduced traction hazard")
+        level = _escalate(level, "MEDIUM")
 
     # No alerts triggered
     if not alerts:

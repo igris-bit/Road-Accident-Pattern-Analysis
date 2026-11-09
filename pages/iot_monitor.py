@@ -15,6 +15,7 @@ Features:
   6. Risk Prediction        — Multi-factor accident risk assessment
   7. City Statistics        — Historical accident data by city
   8. Emergency Warnings     — Automatic alerts for high-risk situations
+"""
 
 
 import time
@@ -184,6 +185,8 @@ if manual_trigger or auto_refresh:
         "Visibility":      reading["visibility"],
         "Temp (°C)":       reading["temperature"],
         "Traffic":         reading["traffic_density"],
+        "Speed (km/h)":    reading.get("vehicle_speed", "N/A"),
+        "Road Surface":    reading.get("road_condition", "N/A"),
         "Risk Score":      reading["risk_score"],
         "Alert Level":     alert["level"],
         "Alert Message":   " | ".join(alert["messages"]),
@@ -213,11 +216,13 @@ else:
     c5.metric("🚗 Traffic",       r["traffic_density"].capitalize())
     c6.metric("🕐 Hour",          f"{r['hour']:02d}:00")
 
-    c7, c8, c9, c10 = st.columns(4)
+    c7, c8, c9, c10, c11, c12 = st.columns(6)
     c7.metric("🛣️ Road Type",     r["road_type"].capitalize())
     c8.metric("⚠️ Peak Hour",     "Yes" if r["is_peak_hour"] else "No")
-    c9.metric("📅 Weekend",       "Yes" if r["is_weekend"] else "No")
-    c10.metric("🗓️ Day",          r["day_of_week"])
+    c9.metric("🏎️ Avg Speed",     f"{r.get('vehicle_speed', 'N/A')} km/h")
+    c10.metric("🛤️ Surface",      r.get("road_condition", "N/A").capitalize())
+    c11.metric("📶 Sensor",        r.get("sensor_status", "N/A").capitalize())
+    c12.metric("🗓️ Day",          r["day_of_week"])
 
     st.caption(f"⏱️ Reading timestamp: **{r['timestamp']}**  |  📌 Lat: {r['latitude']}, Lon: {r['longitude']}")
 
@@ -256,13 +261,13 @@ else:
 
         # Colour legend
         leg1, leg2, leg3, leg4 = st.columns(4)
-        leg1.markdown("🟢 **0.0–0.44** Safe")
-        leg2.markdown("🔵 **0.44–0.44** Low")
+        leg1.markdown("🟢 **0.0–0.24** Safe")
+        leg2.markdown("🔵 **0.25–0.44** Low")
         leg3.markdown("🟡 **0.45–0.69** Medium")
         leg4.markdown("🔴 **0.70–1.0** High")
 
     with gauge_col2:
-        gauge_emoji = "🟢" if risk < 0.45 else ("🟡" if risk < 0.70 else "🔴")
+        gauge_emoji = "🟢" if risk < 0.25 else ("🔵" if risk < 0.45 else ("🟡" if risk < 0.70 else "🔴"))
         st.markdown(
             f"<div style='text-align:center; font-size:60px; margin-top:10px'>{gauge_emoji}</div>"
             f"<div style='text-align:center; font-size:28px; font-weight:bold'>{risk:.2f}</div>",
