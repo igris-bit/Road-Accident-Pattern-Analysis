@@ -2,17 +2,28 @@
 
 > **Official Instruction 4**: *"The team leader must provide honest feedback about the contribution of each team member, clearly mentioning who contributed and who did not."*
 
-This document serves as the official audit record of member contributions across Git branches, module development, and project deliverables for **IIoT-3: Road Accident Pattern Analysis**.
+This document serves as the official audit record of member contributions across Git branches, module development, and project deliverables for **IIoT-3: Road Accident Pattern Analysis & Smart Highway Monitoring**.
 
 ---
 
 ## 📊 Summary Contribution Tally
 
-| Category | Count | Status |
-| :--- | :---: | :--- |
-| **Total Team Members** | **14** | Including Team Leader |
-| **Active Contributors** | 12 | Contributed code, analysis, or documentation |
-| **Partial / Inactive Members** | 2 | *(Adjust based on your final review before submitting)* |
+| Category | Count | Member Names | Official Audit Status |
+| :--- | :---: | :--- | :--- |
+| **Total Team Members** | **14** | All enrolled project members | Full Team Cohort |
+| **Active Contributors** | **12** | Lovish Chauhan (Lead), Amit Kohli, Arvind Mourya, Ayush Patel, Krishu Kumar, Mayank Gupta, Pritam Kumar, Sunal, Daniyal Malik, Riddhi Gupta, Alok Chaubey, Kritika | Contributed code, architecture, simulation, analysis & documentation |
+| **Inactive Members (Did Not Contribute)** | **2** | **Ayan Ansari**, **Om** | **Declared Inactive** — Did not contribute to codebase, simulation, or core deliverables |
+
+---
+
+> ### ⚠️ Mandatory Instruction 4 Declaration: Inactive Members
+> Pursuant to mandatory form instruction 4 (*"The team leader must provide honest feedback about the contribution of each team member, clearly mentioning who contributed and who did not"*), the following two members are officially recorded as **Inactive / Non-Contributing**:
+> 
+> 1. **Ayan Ansari** (Branch: `ayan`) — **INACTIVE (Did Not Contribute)**  
+>    *Did not contribute to core codebase architecture, predictive algorithms, IoT simulations, or report documentation.*
+> 
+> 2. **Om** (Branch: `om`) — **INACTIVE (Did Not Contribute)**  
+>    *No functional code commits, pull requests, or deliverable contributions made to the project repository.*
 
 ---
 
@@ -20,26 +31,25 @@ This document serves as the official audit record of member contributions across
 
 | # | Member Name | GitHub / Branch | Assigned Role & Module | Contribution Level | Team Leader's Honest Remarks |
 | :---: | :--- | :--- | :--- | :---: | :--- |
-| **1** | **Lovish Chauhan** *(Leader)* | `Lovish` | **Team Lead & System Architect**<br>• Streamlit Community Cloud live deployment<br>• What-If ML Severity & Risk Predictor<br>• Smart Highway VMS actuator & CAD dispatch<br>• Codebase refactoring & single-entrypoint standardization | **High (Lead)** | Spearheaded overall architecture, resolved deployment roadblocks, implemented the predictive AI and emergency dispatch features, and unified team deliverables. |
-| **2** | **Amit Kohli** | `main` / `c8f4245` | **Risk & Safety Insights Engine**<br>• State-wise accident grouping analysis<br>• Risk score threshold alerts<br>• Weather condition correlation logic | **High** | Actively implemented the top 10 state breakdown and initial safety threshold cards on the main dashboard. |
-| **3** | **Arvind Mourya** | `arvind` | **IoT Perception Simulation**<br>• Roadside optical sensor reading logic<br>• Telemetry generation (`iot_simulator.py`)<br>• Weather/visibility condition thresholds | **High** | Contributed core sensor simulation methods and telemetry generation loops for the IIoT module. |
-| **4** | **Ayush Patel** | `ayush-road-accident-analysis` | **Data Pipeline & Preprocessing**<br>• Missing value imputation and deduplication<br>• Removal of uninformative fields (`festival`)<br>• Feature engineering for peak hours | **High** | Cleaned and validated the 20,000-record dataset, ensuring all categorical fields were normalized. |
-| **5** | **Krishu Kumar** | `krishu` | **Exploratory Data Analysis (EDA)**<br>• Google Colab notebook authoring<br>• Correlation heatmaps and hourly distribution charts<br>• Statistical summaries | **High** | Built the Colab research notebook (`Road_Accident_Pattern_Analysis.ipynb`) and analyzed distribution trends. |
-| **6** | **Mayank Gupta** | `mayank` | **Frontend UI & Metric Cards**<br>• Dashboard layout optimization<br>• Custom CSS styling for metric boxes<br>• Downloadable CSV button integration | **Medium** | Contributed UI styling enhancements, CSS card styling, and assisted in filter integration. |
-| **7** | **Pritam Kumar** *(Athox-X)* | `pritam` | **Multi-Page Architecture**<br>• Multi-page Streamlit layout (`pages/`)<br>• Sidebar page navigation routing<br>• Session state persistence | **Medium** | Set up the multi-page directory structure and helped transition the IoT monitor into an independent page. |
-| **8** | **Sunal** | `sunal` | **Geospatial & Coordinates Mapping**<br>• City coordinate mapping for the 8 corridors<br>• Pydeck Scatterplot and severity color palette<br>• Blackspot visual inspection | **Medium** | Assisted in geospatial coordinate mapping and visual severity legend design on the Pydeck map. |
-| **9** | **Daniyal Malik** | `Daniyal` | **Quality Assurance & Testing**<br>• Edge cases testing with missing data<br>• Telemetry generation speed tests<br>• Cross-browser UI validation | **Medium** | Conducted functional testing across filter combinations and validated telemetry log exports. |
-| **10** | **Riddhi Gupta** | `Riddhi-Gupta` | **Research & Literature Survey**<br>• Accident causation research in Indian cities<br>• Literature review documentation for report<br>• Safety policy recommendations | **Medium** | Authored the literature survey and comparative study sections for the official project report. |
-| **11** | **Alok** | `alok` | **Historical Stats Module**<br>• City-wise historical profile aggregation<br>• High-casualty corridor identification<br>• Tabular statistics formatting | **Medium** | Assisted in implementing the historical context panel showing city averages and top accident causes. |
-| **12** | **Kritika** | `kritikaaa` | **Documentation & Presentation**<br>• Presentation slide deck drafting<br>• Chart interpretation text summaries<br>• Report proofreading | **Medium** | Compiled descriptive explanations for visual charts and helped structure the final presentation slides. |
-| **13** | **Ayan** | `ayan` | **Telemetry Log & Data Export**<br>• Alert history session logging<br>• CSV timestamped export feature<br>• Secondary data verification | **Low / Partial** | Contributed initial code for logging alerts but required assistance for formatting and deployment integration. |
-| **14** | **Om** | `om` | **Support & Verification**<br>• Minor testing of sidebar filter widgets<br>• Peer review of chart formatting | **Low / Minimal** | Participated in team discussions but had limited code contributions on GitHub. |
+| **1** | **Lovish Chauhan** *(Leader)* | `Lovish` | **Team Lead & System Architect**<br>• Streamlit Community Cloud live CI/CD deployment<br>• What-If ML Severity & Risk Predictor<br>• Smart Highway VMS actuator & CAD dispatch<br>• Codebase refactoring & single-entrypoint standardization<br>• Batch launcher script (`run_app.bat`) | **High (Lead)** | Spearheaded overall system architecture, resolved deployment roadblocks, engineered the predictive AI and emergency dispatch features, and unified all team deliverables into a production-ready system. |
+| **2** | **Krishu Kumar** | `krishu` | **Foundational Dashboard & EDA**<br>• Initial Streamlit dashboard setup (`fca04dc`, `fd8d996`)<br>• 20,000-record dataset integration<br>• Google Colab research notebook authoring (`98f279f`)<br>• Linux deployment configuration (`packages.txt`) | **High** | Built the foundational Streamlit application, integrated the full 20,000-record dataset, authored the research notebook, and configured system dependencies. |
+| **3** | **Mayank Gupta** | `mayank` | **IoT Perception Simulation**<br>• Core simulation module (`iot_simulator.py`)<br>• Multi-page IoT monitor UI (`pages/iot_monitor.py`)<br>• Pydeck geospatial layer integration<br>• Sensor telemetry generation loops | **High** | Authored the core IIoT simulation module and real-time telemetry streaming logic across metropolitan corridors. |
+| **4** | **Alok Chaubey** | `alok` | **Engineering & Sync**<br>• IoT bug fixes & method deduplication (`5f14dde`)<br>• State variable synchronization in `streamlit_app.py`<br>• Dev Container development environment (`e5dfaf4`) | **High** | Fixed critical syntax and duplicate method issues in the IoT simulation, synchronized session state variables, and created reproducible dev container configs. |
+| **5** | **Arvind Mourya** | `arvind` | **State Analytics Module**<br>• State-Wise Accident Analysis dashboard (`567d35e`)<br>• Top 10 state aggregations (accidents & casualties)<br>• Comparative visual charts & risk indicators | **High** | Engineered the comprehensive state-level grouping analysis and interactive Plotly comparative visual charts. |
+| **6** | **Amit Kohli** | `main` / `c8f4245` | **Safety Insights Banner**<br>• Accident Risk & Safety Insights banner (`c8f4245`)<br>• High / Moderate threshold alert logic<br>• Adverse weather frequency counters | **High** | Implemented the real-time threshold alert banners for adverse weather risks and collision frequency metrics. |
+| **7** | **Ayush Patel** | `ayush` | **Data Pipeline & Integration**<br>• Missing value imputation & deduplication<br>• Dataset normalization & feature engineering<br>• PR #4 integration (`c108d2c`) & README setup guide | **High** | Cleaned and validated the 20,000-record dataset, handled PR synchronization, and authored detailed setup instructions. |
+| **8** | **Pritam Kumar** *(Athox-X)* | `pritam` | **UI & Telemetry Enhancement**<br>• Refined `iot_simulator.py` sensor generation (`0aa5a8d`)<br>• Alert display styling in `pages/iot_monitor.py` (`03be2bc`)<br>• CSS metric cards optimization | **Medium** | Improved the roadside telemetry generator and refined UI alert card presentation styles. |
+| **9** | **Kritika** | `kritikaaa` | **Team Guidelines & Testing**<br>• Authored `CONTRIBUTING.md` team guide (`17c34b4`)<br>• Verification of simulation parameter boundaries<br>• Report review & descriptive summaries | **Medium** | Authored team collaboration guidelines, verified parameter boundaries for simulation metrics, and assisted in documentation. |
+| **10** | **Sunal** | `sunal` | **Documentation & Testing**<br>• Updated `iot_monitor.py` parameters (`b54a36b`)<br>• Multiple README documentation revisions (`f81277d`, `82a8fdd`)<br>• UI testing on local environment | **Medium** | Updated simulation parameters and authored several documentation iterations across project milestones. |
+| **11** | **Daniyal Malik** | `Daniyal` | **Notebook & Schema QA**<br>• Standardized notebook naming (`3758353`)<br>• Schema validation across 24 dataset features<br>• Multi-browser UI verification | **Medium** | Validated dataset column integrity, checked statistical consistency, and standardized notebook naming. |
+| **12** | **Riddhi Gupta** | `Riddhi-Gupta` | **Research & Literature Review**<br>• Accident pattern research in Indian metros (`91db893`)<br>• Literature survey & comparative findings<br>• Project documentation support | **Medium** | Researched metropolitan collision patterns and contributed literature review findings for project reporting. |
+| **13** | **Ayan Ansari** | `ayan` | **Declared Inactive**<br>• Assigned to secondary logging / verification<br>• Did not deliver functional code or modules | **Inactive (Did Not Contribute)** | **Did not contribute.** Had nominal branch activity but failed to deliver functional code, analytical modules, or technical deliverables for the project. |
+| **14** | **Om** | `om` | **Declared Inactive**<br>• Assigned to QA review & testing<br>• Zero code commits / deliverables | **Inactive (Did Not Contribute)** | **Did not contribute.** Did not submit any functional code commits, pull requests, or deliverable assets to the GitHub repository. |
 
 ---
 
 ## ⚖️ Leader's Submission Statement
 
-> *"As team leader, I confirm that the evaluation above is an honest reflection of git contributions, code commits, and project responsibilities delivered by each member. Members marked 'High' and 'Medium' actively developed and tested the core features. Members marked 'Low' had minimal code contributions and primarily assisted in review."*
+> *"As team leader of this 14-member Capstone Project, I hereby certify under academic honor that the evaluation above is an honest, accurate, and transparent reflection of each individual's technical contribution to the repository. The 12 active members developed, integrated, and verified the production systems. The 2 inactive members (**Ayan Ansari** and **Om**) did not contribute to the technical execution, code development, or core deliverables of this project."*
 >
-> — **Lovish Chauhan** *(Team Leader, IIoT-3 Project)*
-
+> — **Lovish Chauhan** *(Team Leader, IIoT-3 Capstone Project)*

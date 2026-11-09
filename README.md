@@ -182,8 +182,8 @@ Navigate to **IoT Monitor** in the sidebar to access Module 2 (IIoT Simulation &
 | **10** | **Sunal** | `sunal` | **Documentation Iterations:** Updated `iot_monitor.py` parameters (`b54a36b`), authored multiple `README.md` documentation revisions (`f81277d`, `82a8fdd`, `fff9bae`). | **Medium** |
 | **11** | **Daniyal Malik** | `Daniyal` | **Notebook & Schema Audit:** Standardized notebook naming to `Road_Accident_Pattern_Analysis.ipynb` (`3758353`) and verified dataset column schemas. | **Medium** |
 | **12** | **Riddhi Gupta** | `Riddhi-Gupta` | **Research & Overview:** Documented project feature overviews in `README.md` (`91db893`, `bad32ef`), researched Indian metropolitan collision patterns. | **Medium** |
-| **13** | **Ayan Ansari** | `ayan` | **PR Integration:** Managed PR #3 merge from Krishu (`434d47e`), updated deployment notes in `README.md` (`d6668d4`). | **Low / Partial** |
-| **14** | **Om** | `om` | **QA & Review:** Participated in peer code review cycles, tested sidebar filter widgets, and validated UI responsiveness across platforms. | **Low / Minimal** |
+| **13** | **Ayan Ansari** | `ayan` | **Inactive Member:** Assigned to deployment verification but did not actively contribute functional code or project deliverables. | **Inactive** |
+| **14** | **Om** | `om` | **Inactive Member:** Assigned to QA review but made zero functional code commits or technical deliverables to the repository. | **Inactive** |
 
 ---
 
