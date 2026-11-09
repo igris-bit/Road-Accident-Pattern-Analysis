@@ -30,17 +30,33 @@ Real-time roadside sensor simulation and industrial actuation across 8 Indian co
 
 ---
 
-## 🗂️ File Structure
+## 🗂️ Project Organization & File Structure
 
 ```
-├── streamlit_app.py                    # Main dashboard & predictive engine (Module 1)
-├── iot_simulator.py                    # IIoT engine: sensor generator, alerts, VMS & CAD (Module 2)
-├── pages/
-│   └── iot_monitor.py                  # IIoT live monitoring page (Module 2)
-├── indian_roads_dataset.csv            # Dataset: 20,000 rows × 24 columns
-├── Road_Accident_Pattern_Analysis.ipynb # EDA notebook (Google Colab)
-├── requirements.txt                    # Python dependencies
-└── packages.txt                        # System packages
+Road-Accident-Pattern-Analysis/
+│
+├── .vscode/                               # Workspace configuration
+│   └── settings.json                      # Python 3.12 interpreter path
+│
+├── docs/                                  # Official Submission Materials
+│   ├── SUBMISSION_DETAILS.md              # All 4 mandatory submission links & checklist
+│   ├── TEAM_CONTRIBUTIONS.md              # Honest 14-member contribution & evaluation matrix
+│   ├── PROJECT_REPORT.md                  # Comprehensive IEEE-style project report
+│   └── presentation/                      # Presentation deck
+│       └── PROJECT_PPT_OUTLINE.md         # 12-slide presentation structure & speaking notes
+│
+├── notebooks/                             # Research & Exploratory Data Analysis
+│   └── Road_Accident_Pattern_Analysis.ipynb # Colab / Jupyter analysis notebook
+│
+├── pages/                                 # Multi-Page Streamlit Navigation
+│   └── iot_monitor.py                     # Module 2: IIoT Telemetry, VMS & CAD Dispatch
+│
+├── indian_roads_dataset.csv               # Ground-truth dataset (20,000 records × 24 features)
+├── iot_simulator.py                       # IIoT simulation & predictive severity engine
+├── streamlit_app.py                       # Module 1: Main Dashboard entry point (Streamlit Cloud)
+├── requirements.txt                       # Python dependencies
+├── packages.txt                           # System-level dependencies
+└── run_app.bat                            # One-click Windows application launcher
 ```
 
 ---
