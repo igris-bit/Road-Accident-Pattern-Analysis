@@ -1,6 +1,6 @@
 # Contributing to Road Accident Pattern Analysis
 
-Thank you for contributing! Follow these steps to set up the project locally.
+Thank you for contributing! Follow these steps to set up the project locaally.
 
 ## Setup Instructions
 
