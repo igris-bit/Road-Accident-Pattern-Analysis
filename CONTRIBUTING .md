@@ -4,7 +4,7 @@ Thank you for contributing! Follow these steps to set up the project locaally.
 
 ## Setup Instructions
 
-1. **Clone the repository:**
+1. **Clone the n.  repository:**
    ```bash
    git clone [https://github.com/igris-bit/Road-Accident-Pattern-Analysis.git](https://github.com/igris-bit/Road-Accident-Pattern-Analysis.git)
    cd Road-Accident-Pattern-Analysis
