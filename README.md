@@ -14,7 +14,7 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Overview. 
 
 Road traffic collisions cause over 150,000 fatalities annually across India. Traditional transportation safety systems are fundamentally retrospective—relying on post-accident police records that cannot prevent collisions before they occur.
 
