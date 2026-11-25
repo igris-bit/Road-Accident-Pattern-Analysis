@@ -1,6 +1,6 @@
 # Road Accident Pattern Analysis
 
-Analyze de-identified accident records to describe patterns by time, road type, weather, or severity
+Analyze de-identified accident records to describe patterns by time, road type, weather, or severity.
 
 ---
 
@@ -57,4 +57,5 @@ Navigate to **IoT Monitor** in the sidebar for the simulation module.
 
 ```
 streamlit · pandas · matplotlib · seaborn · numpy · pydeck
+'''
 
